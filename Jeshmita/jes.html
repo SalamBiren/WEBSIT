@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine Surprise</title>
+
+<style>
+/* ===== Body Background ===== */
+body {
+    margin: 0;
+    padding: 20px;
+    background: url(Red-Rose-Wallpaper-HD-07231.jpeg) no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+/* ===== Floating Hearts ===== */
+.heart {
+    position: absolute;
+    color: #ff4d6d;
+    font-size: 22px;
+    animation: floatHearts 6s linear infinite;
+}
+
+@keyframes floatHearts {
+    0%   { transform: translateY(100vh) scale(0.6); opacity: 1; }
+    100% { transform: translateY(-10vh) scale(1.4); opacity: 0; }
+}
+
+/* ===== Center Split Text ===== */
+.center-text-wrapper{
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.center-text{
+    font-size: 52px;
+    font-weight: bold;
+    font-family: "Brush Script MT", "Comic Sans MS", cursive;
+    color: #fff;
+    text-shadow: 
+        0 0 10px #ff2d55,
+        0 0 20px #ff2d55,
+        0 0 40px #ff2d55;
+    animation: glow 2s infinite alternate, heartbeat 1.5s infinite;
+}
+
+/* ===== Glow Animation ===== */
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ff2d55; }
+    to   { text-shadow: 0 0 30px #ff2d55, 0 0 60px #ff2d55; }
+}
+
+/* ===== Heartbeat Animation ===== */
+@keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    50%     { transform: scale(1.1); }
+}
+
+/* ===== Container Grid ===== */
+.container {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: 200px 1fr 200px;
+    gap: 15px;
+    max-width: 1000px;
+    margin: auto;
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.box {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+
+.small img,
+.medium img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===== Grid Position ===== */
+.top-left { grid-column: 1; grid-row: 1; }
+.top-right { grid-column: 3; grid-row: 1; }
+.bottom-left { grid-column: 1; grid-row: 3; }
+.bottom-right { grid-column: 3; grid-row: 3; }
+.center { grid-column: 2; grid-row: 2; }
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating Hearts -->
+<div class="heart" style="left:10%">❤️</div>
+<div class="heart" style="left:30%">💖</div>
+<div class="heart" style="left:50%">💘</div>
+<div class="heart" style="left:70%">💕</div>
+<div class="heart" style="left:90%">💗</div>
+
+<!-- Center Split Animated Text -->
+<div class="center-text-wrapper">
+    <div class="center-text">LOVE</div>
+    <div class="center-text">YOU FOREVER</div>
+</div>
+
+<!-- Image Grid -->
+<div class="container">
+    <div class="box small top-left">
+        <img src="F4.jpeg">
+    </div>
+
+    <div class="box small top-right">
+        <img src="F7.JPG">
+    </div>
+    
+    <div class="box small bottom-left">
+        <img src="F6.jpeg">
+    </div>
+
+    <div class="box small bottom-right">
+        <img src="F5.JPG">
+    </div>
+
+    <div class="box medium center">
+        <img src="N.jpeg">
+    </div>
+</div>
+
+</body>
+</html>

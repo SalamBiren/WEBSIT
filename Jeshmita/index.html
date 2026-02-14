@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<title>VALENTINE</title>
+<head>
+<style>
+    body {
+        margin: 0;
+        height: 120vh;
+        background-image:url(F1.jpg) ;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+    } 
+    .box {
+        background:url(F2.png);
+        background-size: cover;
+        padding: 50px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+        margin-bottom: 30px;
+    }
+
+    .btn-container {
+        position: relative;
+        height: 120px;
+    }
+
+    button {
+        padding: 12px 28px;
+        font-size: 18px;
+        border-radius: 30px;
+        border: none;
+        cursor: pointer;
+    }
+
+    #Hoi {
+        background: #ff4d6d;
+        color: white;
+    }
+
+    #Talle {
+        background: #999;
+        color: white;
+        position: absolute;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h1>WILL YOU BE MY VALENTINE? ❤️</h1>
+
+    <div class="btn-container">
+        <button id="Hoi" onclick="goNext()">Hoi</button>
+        <button id="Talle" onmouseover="moveBtn()">Tallae</button>
+    </div>
+</div>
+
+<script>
+function moveBtn() {
+    let btn = document.getElementById("Talle");
+
+    let x = Math.random() * 250;
+    let y = Math.random() * 80;
+
+    btn.style.left = x + "px";
+    btn.style.top = y + "px";
+}
+
+function goNext() {
+    window.location.href = "jes.html";
+}
+</script>
+
+</body>
+</html>
